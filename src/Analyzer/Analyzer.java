@@ -112,13 +112,15 @@ public abstract class Analyzer {
 		
 		int current = m_corpus.getSize();
 		File dir = new File(folder);
+//		
+//		System.out.println(dir.listFiles().toString());
 		for (File f : dir.listFiles()) {
 			if (f.isFile() && f.getName().endsWith(suffix)) {
 				LoadDoc(f.getAbsolutePath());
 			} else if (f.isDirectory())
 				LoadDirectory(f.getAbsolutePath(), suffix);
 		}
-		System.out.format("Loading %d reviews from %s\n", m_corpus.getSize()-current, folder);
+//		System.out.format("Loading %d reviews from %s\n", m_corpus.getSize()-current, folder);
 	}
 	
 	abstract public void LoadDoc(String filename);
